@@ -21,7 +21,9 @@
 .text-body {
   font-size: 1.25rem;
 }
-.text-body-sm {
+.text-body-sm,
+.text-body-sm-bold {
+  font-size: 1rem;
 }
 .text-caption {
   font-size: 0.875rem;
@@ -40,7 +42,12 @@
 
 .text-body,
 .text-body-sm,
+.text-body-sm-bold,
 .text-caption {
   font-family: "Nunito", sans-serif;
   line-height: 140%;
+}
+
+.text-body-sm-bold {
+  font-weight: bold;
 }
