@@ -5,7 +5,7 @@ export function Home() {
   return (
     <div className="home">
       <Hero />
-      {/* <Featured/> */}
+      <Featured />
     </div>
   );
 }

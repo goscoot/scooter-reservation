@@ -38,52 +38,6 @@
     align-items: flex-end;
     background-color: #f7fcf5;
   }
-
-  &__featured {
-    display: flex;
-    background-color: #f9f9f9;
-    height: 600px;
-
-    &__carousel {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      gap: 20px;
-    }
-
-    &__product {
-      max-width: 325px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 20px;
-
-      &--description {
-        display: flex;
-        flex-direction: column;
-        padding: 0px;
-        gap: 8px;
-      }
-    }
-    &__left {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0px;
-      gap: 26px;
-    }
-
-    &__wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 26px;
-    }
-  }
 }
 
 @media (max-width: 1000px) {
