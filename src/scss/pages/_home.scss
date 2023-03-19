@@ -34,6 +34,7 @@
   }
 
   &__wrapper2 {
+    margin: 0 20px;
     display: flex;
     align-items: center;
     background-color: var(--clr-green-300);
@@ -62,8 +63,11 @@
       padding: 0 20px;
     }
 
-    &__wrapper2__image-container {
-      height: 100%;
+    &__wrapper2 {
+      margin: 0;
+      &__image-container {
+        height: 100%;
+      }
     }
 
     &__wrapper1 {

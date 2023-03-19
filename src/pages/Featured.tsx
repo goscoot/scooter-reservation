@@ -14,6 +14,18 @@ const products: SliderElement[] = [
       "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
     imageSource: "src/assets/product1.png",
   },
+  {
+    title: "Ducati Pro - III Electric Scooter",
+    caption:
+      "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
+    imageSource: "src/assets/product1.png",
+  },
+  {
+    title: "Ducati Pro - IV Electric Scooter",
+    caption:
+      "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
+    imageSource: "src/assets/product1.png",
+  },
 ];
 
 export function Featured() {
