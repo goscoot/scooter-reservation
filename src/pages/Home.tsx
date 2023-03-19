@@ -1,5 +1,5 @@
-import { Featured } from "./Featured";
 import { Hero } from "./Hero";
+import { Featured } from "./Featured";
 
 export function Home() {
   return (

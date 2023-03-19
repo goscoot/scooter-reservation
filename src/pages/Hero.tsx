@@ -1,3 +1,7 @@
+import arrowRight from "../assets/arrow-right.svg";
+import heroImage1 from "../assets/scooter1.png";
+import heroImage2 from "../assets/scooter2.png";
+
 export function Hero() {
   return (
     <div className="home__hero">
@@ -13,21 +17,20 @@ export function Hero() {
             </p>
             <button className="btn btn-primary text-caption">
               Our vehicles
-              <img src="src\assets\arrow-right.svg" alt="Arrow right" />
+              <img src={arrowRight} alt="Arrow right" />
             </button>
           </div>
         </div>
 
         <div className="home__half">
           <div className="home__wrapper2">
-            <img
-              src="src\assets\scooter1.png"
-              alt="Newest model electric scooter"
-            ></img>
-            <img
-              src="src\assets\scooter2.png"
-              alt="Person riding electric scooter on road"
-            ></img>
+            <div className="home__wrapper2__image-container">
+              <img src={heroImage1} alt="Newest model electric scooter"></img>
+              <img
+                src={heroImage2}
+                alt="Person riding electric scooter on road"
+              ></img>
+            </div>
           </div>
         </div>
       </div>
