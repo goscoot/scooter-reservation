@@ -7,24 +7,28 @@ const products: SliderElement[] = [
     caption:
       "The PRO-I is the most technically advanced scooter in the Ducati Urban e-mobility series.",
     imageSource: "src/assets/product1.png",
+    id: 1,
   },
   {
-    title: "Ducati Pro - II Electric Scooter",
+    title: "Flow St Kilda XTS Pro Electric Scooter XXXXXXX",
     caption:
       "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
     imageSource: "src/assets/product1.png",
+    id: 2,
   },
   {
     title: "Ducati Pro - III Electric Scooter",
     caption:
       "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
     imageSource: "src/assets/product1.png",
+    id: 3,
   },
   {
     title: "Ducati Pro - IV Electric Scooter",
     caption:
       "The PRO-II is the most technically advanced scooter in the Ducati Urban e-mobility series.",
     imageSource: "src/assets/product1.png",
+    id: 4,
   },
 ];
 
@@ -35,9 +39,8 @@ export function Featured() {
         <div className="featured__wrapper">
           <h2 className="text-heading2">Featured Vehicles</h2>
           <p className="text-body">
-            These are recently the most <br /> frequently chosen and most valued{" "}
-            <br />
-            vehicles by our customers around the <br /> world.
+            These are recently the most frequently chosen and most valued
+            vehicles by our customers around theworld.
           </p>
         </div>
       </div>

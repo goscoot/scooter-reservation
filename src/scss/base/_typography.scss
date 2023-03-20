@@ -18,6 +18,10 @@
   font-size: 1.5rem;
 }
 
+.text-heading6 {
+  font-size: 1.25rem;
+}
+
 .text-body {
   font-size: 1.25rem;
 }
@@ -33,7 +37,8 @@
 .text-heading2,
 .text-heading3,
 .text-heading4,
-.text-heading5 {
+.text-heading5,
+.text-heading6 {
   font-family: "stratos", sans-serif;
   font-weight: 600;
   line-height: 95%;
@@ -47,6 +52,5 @@
 }
 
 .text-700 {
-  // previously text-body-sm-bold
   font-weight: bold;
 }

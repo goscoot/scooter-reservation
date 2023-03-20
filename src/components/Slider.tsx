@@ -1,5 +1,13 @@
-import { useRef, useState, useLayoutEffect } from "react";
+import {
+  useRef,
+  useState,
+  useLayoutEffect,
+  MouseEvent,
+  TouchEvent,
+} from "react";
+import { Link } from "react-router-dom";
 
+import smallArrowRight from "../assets/arrow-right.svg";
 import arrowRight from "../assets/image-arrow-right.svg";
 import arrowLeft from "../assets/image-arrow-left.svg";
 
@@ -7,6 +15,7 @@ export type SliderElement = {
   title: string;
   caption: string;
   imageSource: string;
+  id: number;
 };
 
 type SliderProps = {
@@ -38,9 +47,7 @@ export function Slider({ value }: SliderProps) {
     }
   };
 
-  const handleMouseDown = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleMouseDown = (event: MouseEvent<HTMLDivElement>) => {
     setIsDragStart(true);
     setPrevPageX(event.pageX); // horizontal coordinate of mouse click relative to the left edge of parent element
     if (carouselRef.current) {
@@ -48,9 +55,7 @@ export function Slider({ value }: SliderProps) {
     }
   };
 
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
     if (!carouselRef.current) return;
     event.preventDefault();
 
@@ -58,9 +63,7 @@ export function Slider({ value }: SliderProps) {
     if (!isDragStart) {
       return;
     }
-
     setIsDragging(true);
-    carouselRef.current.classList.add("dragging");
 
     // scroll when moving mouse
     setPositionDiff(event.pageX - prevPageX);
@@ -69,7 +72,6 @@ export function Slider({ value }: SliderProps) {
 
   const handleMouseUp = () => {
     setIsDragStart(false);
-    if (carouselRef.current) carouselRef.current.classList.remove("dragging");
     if (!isDragging) return;
     setIsDragging(false);
 
@@ -77,7 +79,7 @@ export function Slider({ value }: SliderProps) {
     setPositionDiff(0);
   };
 
-  function handleTouchDown(event: React.TouchEvent<HTMLDivElement>) {
+  function handleTouchDown(event: TouchEvent<HTMLDivElement>) {
     setIsDragStart(true);
     setPrevPageX(event.touches[0].pageX);
     if (carouselRef.current) {
@@ -85,17 +87,26 @@ export function Slider({ value }: SliderProps) {
     }
   }
 
-  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+  const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
     if (!carouselRef.current) return;
     event.preventDefault();
     if (!isDragStart) {
       return;
     }
     setIsDragging(true);
-    carouselRef.current.classList.add("dragging");
     setPositionDiff(event.touches[0].pageX - prevPageX);
     carouselRef.current.scrollLeft = prevScrollLeft - positionDiff;
   };
+
+  function scrollBy(value: number, direction: string): void {
+    if (!carouselRef.current) return;
+
+    if (direction === "right") {
+      carouselRef.current.scrollLeft += value;
+    } else if (direction === "left") {
+      carouselRef.current.scrollLeft -= value;
+    }
+  }
 
   useLayoutEffect(() => {
     showHideIcons();
@@ -105,7 +116,7 @@ export function Slider({ value }: SliderProps) {
     <div className="featured__right">
       <div
         ref={carouselRef}
-        className="featured__carousel"
+        className={`featured__carousel ${isDragStart ? "dragging" : ""}`}
         onMouseDown={(e) => handleMouseDown(e)}
         onMouseMove={(e) => handleMouseMove(e)}
         onMouseUp={() => handleMouseUp()}
@@ -118,22 +129,26 @@ export function Slider({ value }: SliderProps) {
           id="left"
           ref={arrowLeftRef}
           onClick={() => {
-            if (carouselRef.current) carouselRef.current.scrollLeft -= 325;
+            scrollBy(325, "left");
           }}
         >
           <img src={arrowLeft} alt="Arrow left" />
         </span>
-        {value.map((v) => (
-          <div className="featured__product">
-            <img src={v.imageSource} alt="Electric scooter" draggable="false" />
+        {value.map((product) => (
+          <div className="featured__product" key={product.id}>
+            <img
+              src={product.imageSource}
+              alt="Electric scooter"
+              draggable="false"
+            />
 
             <div className="featured__product--description">
-              <h2 className="text-700 text-body-sm">{v.title}</h2>
-              <p className="text-caption">{v.caption}</p>
-              <a href="/reservation" className="text-caption link-underlined">
+              <h6 className="text-700 text-heading6">{product.title}</h6>
+              <p className="text-caption">{product.caption}</p>
+              <Link to="/reservation" className="text-caption link-underlined">
                 Make a reservation
-                <img src="src\assets\arrow-right.svg" alt="Arrow right" />
-              </a>
+                <img src={smallArrowRight} alt="Arrow right" />
+              </Link>
             </div>
           </div>
         ))}
@@ -142,7 +157,7 @@ export function Slider({ value }: SliderProps) {
           id="right"
           ref={arrowRightRef}
           onClick={() => {
-            if (carouselRef.current) carouselRef.current.scrollLeft += 325;
+            scrollBy(325, "right");
           }}
         >
           <img src={arrowRight} alt="Arrow right" />
