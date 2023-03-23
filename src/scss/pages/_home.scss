@@ -1,0 +1,127 @@
+.home {
+  color: var(--clr-green-600);
+
+  &__hero {
+    &__container {
+      display: flex;
+    }
+  }
+
+  &__half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    min-height: 1000px;
+  }
+
+  &__half:nth-child(2) {
+    background-color: var(--clr-green-300);
+  }
+
+  &__wrapper1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 70%;
+
+    p {
+      max-width: 450px;
+    }
+  }
+
+  &__wrapper2 {
+    display: flex;
+    align-items: center;
+    background-color: var(--clr-green-300);
+    height: 80%;
+
+    &__image-container {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: nowrap;
+      width: 50%;
+    }
+  }
+
+  &__featured {
+    display: flex;
+    background-color: var(--clr-gray-100);
+    height: 600px;
+
+    &__carousel {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 20px;
+    }
+
+    &__product {
+      max-width: 325px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 20px;
+
+      &--description {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        gap: 8px;
+      }
+    }
+    &__left {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      gap: 26px;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 26px;
+    }
+  }
+}
+
+@media (max-width: 1105px) {
+  .home {
+    &__hero {
+      &__container {
+        flex-direction: column;
+      }
+    }
+    &__half {
+      height: 500px;
+      width: 100%;
+      min-height: 0;
+      padding: 0 20px;
+    }
+
+    &__wrapper2__image-container {
+      height: 100%;
+    }
+
+    &__wrapper1 {
+      width: 90%;
+
+      p {
+        font-size: 1rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
