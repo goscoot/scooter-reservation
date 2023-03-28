@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export function Login() {
+export function Register() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -11,15 +11,25 @@ export function Login() {
   };
 
   return (
-    <div className="signin__login">
-      <div className="signin__login__container">
+    <div className="signup__register">
+      <div className="signup__register__container">
         <form onSubmit={manageSubmit}>
-          <div className="signin__wrapper1">
-            <h1 className="text-heading1">Login</h1>
+          <div className="signup__wrapper1">
+            <h1 className="text-heading1">Register</h1>
           </div>
-          <div className="signin__wrapper2">
+          <div className="signup__wrapper2">
             {/* e-mail & password */}
-            <div className="signin__wrapper2__mail">
+            <div className="signup__wrapper2__name">
+              <div className="text-caption">Name and Lastname</div>
+              <input
+                className="input-text"
+                type="text"
+                placeholder="John Doe"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="signup__wrapper2__mail">
               <div className="text-caption">E-mail</div>
               <input
                 className="input-text"
@@ -29,7 +39,7 @@ export function Login() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="signin__wrapper2__pass">
+            <div className="signup__wrapper2__pass">
               <div className="text-caption">Password</div>
               <input
                 className="input-text"
@@ -40,12 +50,11 @@ export function Login() {
               />
             </div>
           </div>
-          <div className="signin__wrapper3">
+          <div className="signup__wrapper3">
             {/* confirm button & register */}
             <input className="btn btn-primary" type="submit" />
-            <Link to="/register" className="signin__wrapper3__link">
-              <span className="link-underlined">Don’t have account yet? </span>
-              <span className="link-colored">Register</span>
+            <Link to="/login" className="signup__wrapper3__link">
+              <span className="link-underlined">I already have an account</span>
             </Link>
           </div>
         </form>
