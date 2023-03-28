@@ -17,10 +17,9 @@ nav > ul > li > div {
 }
 
 .menu {
-  flex-grow: 1;
-  max-width: 400px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   gap: 40px;
 
@@ -56,16 +55,8 @@ nav > ul > li > div {
 }
 
 @media (max-width: 600px) {
-  .menu {
-    max-width: 165px;
-    gap: 0px;
-
-    // .basket-notification {
-    //     left: 40px;
-    // }
-  }
-
   li:nth-child(-n + 2) {
+    // first two elements
     display: none;
   }
 }
