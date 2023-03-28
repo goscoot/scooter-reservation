@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-interface FbConfig {
+interface FirebaseConfig {
   apiKey: string;
   authDomain: string;
   projectId: string;
@@ -12,7 +12,7 @@ interface FbConfig {
   measurementId: string;
 }
 
-const firebaseConfig: FbConfig = {
+const firebaseConfig: FirebaseConfig = {
   apiKey: "AIzaSyDQzY199cPs0wChs4Dr-hYdSEk5voOtr08",
   authDomain: "scooter-reservation-bcda2.firebaseapp.com",
   projectId: "scooter-reservation-bcda2",

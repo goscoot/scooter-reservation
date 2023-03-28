@@ -28,7 +28,7 @@ export const useAuth = () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   };
 
@@ -36,7 +36,7 @@ export const useAuth = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   };
 
@@ -44,7 +44,7 @@ export const useAuth = () => {
     try {
       await signOut(auth);
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   };
 
