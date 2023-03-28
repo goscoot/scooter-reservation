@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import basket from "../assets/basket.svg";
 import logo from "../assets/logo.svg";
+import { useAuth } from "../hooks/useAuth";
 
 export const Navbar = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const { isLogged, authCheck } = useAuth();
+
+  useEffect(() => {
+    authCheck();
+  }, []);
 
   return (
     <nav>

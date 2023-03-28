@@ -3,12 +3,26 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { useState } from "react";
 
 export const useAuth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLogged, setIsLogged] = useState(false);
+
+  const authCheck = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsLogged(true);
+        // console.log("uid: " + user.uid);
+      } else {
+        setIsLogged(false);
+        // console.log("user is not logged");
+      }
+    });
+  };
 
   const register = async () => {
     try {
@@ -40,6 +54,8 @@ export const useAuth = () => {
     register,
     logout,
     login,
+    isLogged,
+    authCheck,
   };
 };
 
