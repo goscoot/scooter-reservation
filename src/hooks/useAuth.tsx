@@ -4,15 +4,11 @@ import {
   signOut,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const useAuth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    console.log(auth?.currentUser?.email);
-  }, [email]);
 
   const register = async () => {
     try {
