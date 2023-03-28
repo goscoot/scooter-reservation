@@ -57,7 +57,7 @@ export function Slider({ value }: SliderProps) {
 
             <div className="featured__product--description">
               <h5 className="text-700 text-heading5">{product.name}</h5>
-              <p className="text-caption">{product.description}</p>
+              <p className="text-body-sm">{product.description}</p>
               <Link to="/reservation" className="text-caption link-underlined">
                 Make a reservation
                 <img src={smallArrowRight} alt="Arrow right" />
