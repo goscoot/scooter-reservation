@@ -1,4 +1,5 @@
 import productsHeaderImage from "../assets/products-hero.webp";
+import FilterableProductList from "../components/products/FilterableProductList";
 
 const Products = () => {
   return (
@@ -20,6 +21,7 @@ const Products = () => {
           </p>
         </hgroup>
       </header>
+      <FilterableProductList />
     </>
   );
 };
