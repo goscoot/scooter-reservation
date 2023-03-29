@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Login() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const manageSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    console.log(`${email} | ${password}`);
+  const manageSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
+  const handleChange = (handler: string) => (event: ChangeEvent<HTMLInputElement>) => {
+    switch (handler) {
+      case 'email':
+        setEmail(event.target.value);
+        break;
+      case 'password':
+        setPassword(event.target.value);
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -26,7 +38,7 @@ export function Login() {
                 type="text"
                 placeholder="johndoe@gmail.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange('email')}
               />
             </div>
             <div className="signin__wrapper2__pass">
@@ -36,7 +48,7 @@ export function Login() {
                 type="password"
                 placeholder="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange('password')}
               />
             </div>
           </div>
