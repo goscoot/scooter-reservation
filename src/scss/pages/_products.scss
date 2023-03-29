@@ -1,4 +1,4 @@
-.products__header {
+.products-header {
   max-width: 1440px;
 
   display: grid;
@@ -8,19 +8,19 @@
   margin: 0 auto;
 }
 
-.image__wrapper {
+.products-header__image-wrapper {
   grid-row: 1;
   grid-column: 1 / -1;
   height: 100%;
 }
 
-.header__image {
+.products-header__image {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.header__text {
+.products-header__text {
   margin: 0 6rem;
   grid-row: 1;
   grid-column: 1 / 1;
@@ -35,6 +35,7 @@
 
   margin: 0 auto;
 }
+
 .product__thumbnail {
   width: 100%;
 }
