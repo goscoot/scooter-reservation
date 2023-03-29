@@ -69,7 +69,6 @@ export const useSlider = () => {
 
   const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
     if (!carouselRef.current) return;
-    event.preventDefault();
     if (!isDragStart) {
       return;
     }
