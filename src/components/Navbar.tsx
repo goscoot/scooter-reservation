@@ -2,14 +2,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import basket from "../assets/basket.svg";
 import logo from "../assets/logo.svg";
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../context/AuthContext";
 
 export const Navbar = () => {
-  const { isLogged, authCheck } = useAuth();
-
-  useEffect(() => {
-    authCheck();
-  }, []);
+  const { currentUser }: any = useAuth();
 
   return (
     <nav>
@@ -23,7 +19,7 @@ export const Navbar = () => {
         <li>
           <Link to="/products">Products</Link>
         </li>
-        {!isLogged && (
+        {!currentUser && (
           <li>
             <button className="btn btn-primary text-caption">
               <Link to="/register">Sign Up</Link>

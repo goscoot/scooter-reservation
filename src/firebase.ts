@@ -12,16 +12,6 @@ interface FirebaseConfig {
   measurementId: string;
 }
 
-// const firebaseConfig: FirebaseConfig = {
-//   apiKey: "AIzaSyDQzY199cPs0wChs4Dr-hYdSEk5voOtr08",
-//   authDomain: "scooter-reservation-bcda2.firebaseapp.com",
-//   projectId: "scooter-reservation-bcda2",
-//   storageBucket: "scooter-reservation-bcda2.appspot.com",
-//   messagingSenderId: "34359124842",
-//   appId: "1:34359124842:web:35cbc6fc8c7d8f57d8bb13",
-//   measurementId: "G-NRGTE3FDLN",
-// };
-
 const firebaseConfig: FirebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
