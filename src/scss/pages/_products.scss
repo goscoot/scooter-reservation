@@ -26,14 +26,15 @@
   grid-column: 1 / 1;
 }
 
-.products {
+.products-main {
   max-width: 1440px;
+  margin: 0 auto;
+}
 
+.products {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
-
-  margin: 0 auto;
 }
 
 .product__thumbnail {
@@ -53,4 +54,17 @@
   .products {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.sort-products {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-block: 0.5rem;
+  position: relative;
+}
+
+.products-filters {
+  display: flex;
+  justify-content: end;
 }
