@@ -51,6 +51,9 @@
 
 @media (max-width: 1105px) {
   .home {
+    position: relative;
+    top: 80px;
+
     &__hero {
       &__container {
         flex-direction: column;
