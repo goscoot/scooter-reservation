@@ -1,8 +1,9 @@
 import { ChangeEvent, Dispatch, useEffect, useState } from "react";
 import { Actions } from "../../reducers/productsReducer";
-const brands = ["Ducati", "FLOW", "Segway", "Pure", "Aprilia", "KQI2"];
-const colors = ["black", "white", "silver"];
-const ranges = ["65", "40"];
+
+const BRANDS = ["Ducati", "FLOW", "Segway", "Pure", "Aprilia", "KQI2"];
+const COLORS = ["black", "white", "silver"];
+const RANGES = ["65", "40"];
 
 interface FiltersProps {
   dispatch: Dispatch<Actions>;
@@ -71,7 +72,7 @@ const Filters = ({ dispatch }: FiltersProps) => {
     <div>
       <form action="" className="filters">
         <p className="font-weight-700 text-body">Brand</p>
-        {brands.map((brand) => (
+        {BRANDS.map((brand) => (
           <label className="input-wrapper" key={brand}>
             <input
               className="input-checkbox"
@@ -85,7 +86,7 @@ const Filters = ({ dispatch }: FiltersProps) => {
           </label>
         ))}
         <p className="font-weight-700 text-body">Color</p>
-        {colors.map((color) => (
+        {COLORS.map((color) => (
           <label className="input-wrapper" key={color}>
             <input
               className="input-checkbox"
@@ -100,7 +101,7 @@ const Filters = ({ dispatch }: FiltersProps) => {
           </label>
         ))}
         <p className="font-weight-700 text-body">Range</p>
-        {ranges.map((range) => (
+        {RANGES.map((range) => (
           <label className="input-wrapper" key={range}>
             <input
               className="input-checkbox"
