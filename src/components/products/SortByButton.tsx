@@ -2,7 +2,7 @@ import sortIcon from "../../assets/sort-icon.svg";
 import chevronDownIcon from "../../assets/chevron-down.svg";
 import { Dispatch, useState } from "react";
 import { Scooter } from "../../data/Scooters";
-import { Actions } from "./productsReducer";
+import { Actions } from "../../reducers/productsReducer";
 
 export interface Sort {
   method: (a: Scooter, b: Scooter) => number;

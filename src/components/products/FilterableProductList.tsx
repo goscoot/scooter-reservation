@@ -3,7 +3,7 @@ import { scooters } from "../../data/Scooters";
 import SortByButton from "./SortByButton";
 import { useReducer } from "react";
 import Filters from "./Filters";
-import { productsReducer } from "./productsReducer";
+import { productsReducer } from "../../reducers/productsReducer";
 import FiltersButton from "./FiltersButton";
 
 const FilterableProductList = () => {

@@ -1,4 +1,4 @@
-import { Scooter, scooters } from "../../data/Scooters";
+import { Scooter, scooters } from "../data/Scooters";
 
 export type Actions =
   | {

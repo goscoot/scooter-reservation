@@ -3,7 +3,7 @@ import chevronDownIcon from "../../assets/chevron-down.svg";
 import xIcon from "../../assets/x-lg.svg";
 import { Dispatch, useState } from "react";
 import Filters from "./Filters";
-import { Actions } from "./productsReducer";
+import { Actions } from "../../reducers/productsReducer";
 interface FiltersButtonProps {
   dispatch: Dispatch<Actions>;
 }
