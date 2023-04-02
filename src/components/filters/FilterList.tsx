@@ -70,7 +70,7 @@ const Filters = ({ dispatch }: FilterListProps) => {
 
   return (
     <div>
-      <form action="" className="filters">
+      <form action="src/components/products" className="filters">
         <p className="font-weight-700 text-body">Brand</p>
         {BRANDS.map((brand) => (
           <label className="input-wrapper" key={brand}>
