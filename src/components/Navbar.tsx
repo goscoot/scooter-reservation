@@ -32,8 +32,14 @@ export const Navbar = () => {
   }
 
   useEffect(() => {
+    if (!onDisplay) {
+      return;
+    }
     document.addEventListener("click", handleClickOutside, true);
-  }, []);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [onDisplay]);
 
   return (
     <nav>
@@ -55,10 +61,10 @@ export const Navbar = () => {
           </li>
         )}
         <li className="basket">
-          <a href="/booking">
+          <Link to="/booking">
             <span className="basket-notification text-caption">1</span>
             <img src={basket} alt="product basket" />
-          </a>
+          </Link>
         </li>
         {currentUser && (
           <li className="user-icon" onClick={() => setOnDisplay(!onDisplay)}>
