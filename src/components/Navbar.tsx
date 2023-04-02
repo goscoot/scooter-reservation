@@ -47,7 +47,7 @@ export const Navbar = () => {
         <img src={logo} alt="logo" />
       </div>
       <ul className="menu text-body">
-        <li className="text-600">
+        <li className="text-weight-600">
           <Link to="/">Home</Link>
         </li>
         <li>

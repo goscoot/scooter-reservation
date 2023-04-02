@@ -12,7 +12,9 @@ const ProductItem = ({ product }: ProductItemProps) => {
       <img className="product__thumbnail" src={product.thumbnail} alt="" />
 
       <div className="">
-        <h5 className="text-700 text-heading5 product__name">{product.name}</h5>
+        <h5 className="font-weight-700 text-heading5 product__name">
+          {product.name}
+        </h5>
         <p className="text-caption product__description">
           {product.description}
         </p>
