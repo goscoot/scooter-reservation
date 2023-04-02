@@ -1,26 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { AuthContextType, useAuth } from "../context/AuthContext";
+
+const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+// min 6 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.
+
+const SignupSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters long")
+    .matches(passwordRules, {
+      message: "Please create a stronger password",
+    })
+    .required("Password is required"),
+});
 
 export function Register() {
+  const { register } = useAuth() as AuthContextType;
+  const navigate = useNavigate();
+
   return (
     <div className="signup__register">
       <div className="signup__register__container">
         <Formik
           initialValues={{ name: "", email: "", password: "" }}
-          validationSchema={Yup.object().shape({
-            name: Yup.string().required("Name is required"),
-            email: Yup.string()
-              .email("Invalid email address")
-              .required("Email is required"),
-            password: Yup.string()
-              .min(6, "Password must be at least 6 characters long")
-              .required("Password is required"),
-          })}
+          validationSchema={SignupSchema}
           onSubmit={(values) => {
-            setTimeout(() => {
-              //fetch actions will be executed there
+            setTimeout(async () => {
+              try {
+                await register(values.email, values.password);
+                navigate("/");
+              } catch (err) {
+                console.log(err);
+              }
             }, 400);
           }}
         >
