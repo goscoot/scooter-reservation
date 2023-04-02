@@ -1,8 +1,8 @@
 import ProductList from "./ProductList";
 import { scooters } from "../../data/Scooters";
-import SortByButton from "./SortByButton";
+import SortButton from "./SortButton";
 import { useReducer } from "react";
-import Filters from "./Filters";
+import Filters from "./FilterList";
 import { productsReducer } from "../../reducers/productsReducer";
 import FiltersButton from "./FiltersButton";
 
@@ -19,7 +19,7 @@ const FilterableProductList = () => {
         <div className="products-filters">
           <FiltersButton dispatch={dispatch} />
 
-          <SortByButton products={state} dispatch={dispatch} />
+          <SortButton products={state} dispatch={dispatch} />
         </div>
         <ProductList products={state} />
       </main>

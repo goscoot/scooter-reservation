@@ -5,18 +5,18 @@ const BRANDS = ["Ducati", "FLOW", "Segway", "Pure", "Aprilia", "KQI2"];
 const COLORS = ["black", "white", "silver"];
 const RANGES = ["65", "40"];
 
-interface FiltersProps {
+interface FilterListProps {
   dispatch: Dispatch<Actions>;
 }
 
-interface Filters {
+interface FilterList {
   brands: string[];
   colors: string[];
   ranges: string[];
 }
 
-const Filters = ({ dispatch }: FiltersProps) => {
-  const [filters, setFilters] = useState<Filters>({
+const Filters = ({ dispatch }: FilterListProps) => {
+  const [filters, setFilters] = useState<FilterList>({
     brands: [],
     colors: [],
     ranges: [],

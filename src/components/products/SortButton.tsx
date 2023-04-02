@@ -9,7 +9,7 @@ export interface Sort {
   name: string;
 }
 
-interface SortByButtonProps {
+interface SortButtonProps {
   dispatch: Dispatch<Actions>;
   products: Scooter[];
 }
@@ -25,7 +25,7 @@ const sortFunctions = [
   },
 ];
 
-const SortByButton = ({ products, dispatch }: SortByButtonProps) => {
+const SortButton = ({ products, dispatch }: SortButtonProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const [currentSort, setCurrentSort] = useState<Sort>(sortFunctions[0]);
@@ -71,4 +71,4 @@ const SortByButton = ({ products, dispatch }: SortByButtonProps) => {
   );
 };
 
-export default SortByButton;
+export default SortButton;
