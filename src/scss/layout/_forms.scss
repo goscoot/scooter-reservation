@@ -8,3 +8,30 @@
 .input-text::placeholder {
   color: var(--clr-gray-200);
 }
+
+.input-checkbox {
+  border: 1px solid var(--clr-gray-200);
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+  cursor: pointer;
+  font-family: "Nunito", serif;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 12px;
+  width: 12px;
+  border-radius: 2px;
+}
+
+.input-checkbox:checked ~ .checkmark {
+  background-color: var(--clr-green-400);
+}

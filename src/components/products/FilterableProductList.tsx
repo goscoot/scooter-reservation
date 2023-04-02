@@ -1,24 +1,31 @@
 import ProductList from "./ProductList";
-import { Scooter, scooters } from "../../data/Scooters";
+import { scooters } from "../../data/Scooters";
 import SortByButton from "./SortByButton";
-import { useState } from "react";
+import { useReducer } from "react";
+import Filters from "./Filters";
+import { productsReducer } from "./productsReducer";
+import FiltersButton from "./FiltersButton";
 
 const FilterableProductList = () => {
-  const [products, setProducts] = useState<Scooter[]>(scooters);
-
-  const handle = (sortedProducts: Scooter[]) => {
-    setProducts([...sortedProducts]);
-  };
+  const [state, dispatch] = useReducer(productsReducer, scooters);
 
   return (
-    <main className="products-main">
-      <div className="products-filters">
-        <SortByButton setProducts={handle} />
-      </div>
-      <section className="products">
-        <ProductList products={products} />
-      </section>
-    </main>
+    <div className="products-main">
+      <aside className="filters-section">
+        <h2 className="text-heading2 filters-header">Filters</h2>
+        <Filters dispatch={dispatch} />
+      </aside>
+      <main>
+        <div className="products-filters">
+          <FiltersButton dispatch={dispatch} />
+
+          <SortByButton products={state} dispatch={dispatch} />
+        </div>
+        <div className="products">
+          <ProductList products={state} />
+        </div>
+      </main>
+    </div>
   );
 };
 

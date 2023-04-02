@@ -1,7 +1,8 @@
 import sortIcon from "../../assets/sort-icon.svg";
 import chevronDownIcon from "../../assets/chevron-down.svg";
-import { useState } from "react";
-import { Scooter, scooters } from "../../data/Scooters";
+import { Dispatch, useState } from "react";
+import { Scooter } from "../../data/Scooters";
+import { Actions } from "./productsReducer";
 
 export interface Sort {
   method: (a: Scooter, b: Scooter) => number;
@@ -9,7 +10,8 @@ export interface Sort {
 }
 
 interface SortByButtonProps {
-  setProducts: (sortedProducts: Scooter[]) => void;
+  dispatch: Dispatch<Actions>;
+  products: Scooter[];
 }
 
 const sortFunctions = [
@@ -23,7 +25,7 @@ const sortFunctions = [
   },
 ];
 
-const SortByButton = ({ setProducts }: SortByButtonProps) => {
+const SortByButton = ({ products, dispatch }: SortByButtonProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
   const [currentSort, setCurrentSort] = useState<Sort>(sortFunctions[0]);
@@ -35,7 +37,10 @@ const SortByButton = ({ setProducts }: SortByButtonProps) => {
   const handleSetCurrentSortType = (type: Sort) => {
     setCurrentSort(type);
 
-    setProducts(scooters.sort((a, b) => currentSort.method(a, b)));
+    dispatch({
+      type: "sort",
+      sortedProducts: products.sort(currentSort.method),
+    });
   };
 
   return (
