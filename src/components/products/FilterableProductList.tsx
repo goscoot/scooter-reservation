@@ -21,9 +21,7 @@ const FilterableProductList = () => {
 
           <SortByButton products={state} dispatch={dispatch} />
         </div>
-        <div className="products">
-          <ProductList products={state} />
-        </div>
+        <ProductList products={state} />
       </main>
     </div>
   );
