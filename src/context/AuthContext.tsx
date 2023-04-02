@@ -15,7 +15,7 @@ import {
   ReactNode,
 } from "react";
 
-type AuthContextType = {
+export type AuthContextType = {
   currentUser: User | null;
   login: (
     email: string,
