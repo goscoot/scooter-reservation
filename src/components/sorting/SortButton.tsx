@@ -17,7 +17,7 @@ const SortButton = ({ products, dispatch }: SortButtonProps) => {
   const [collapsed, toggleCollapsed] = useToggle();
 
   return (
-    <button className="btn sort-products" onClick={toggleCollapsed}>
+    <button className="btn sort-button" onClick={toggleCollapsed}>
       <img src={sortIcon} alt="" />
       <p>Sort by:</p>
       <p className="font-weight-700">{currentSort.name}</p>
