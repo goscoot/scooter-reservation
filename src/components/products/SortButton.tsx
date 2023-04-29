@@ -1,47 +1,35 @@
 import sortIcon from "../../assets/sort-icon.svg";
 import chevronDownIcon from "../../assets/chevron-down.svg";
-import { Dispatch, useState } from "react";
+import { Dispatch } from "react";
 import { Scooter } from "../../data/Scooters";
 import { Actions } from "../../reducers/productsReducer";
-import { Sort, sortFunctions } from "../../helpers/sorting";
+import { sortFunctions } from "../../helpers/sorting";
+import useToggle from "../../hooks/useToggle";
+import useSorting from "./useSorting";
 
-interface SortButtonProps {
+export interface SortButtonProps {
   dispatch: Dispatch<Actions>;
   products: Scooter[];
 }
 
 const SortButton = ({ products, dispatch }: SortButtonProps) => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const [currentSort, setCurrentSort] = useState<Sort>(sortFunctions[0]);
-
-  const handleCollapsedToggle = () => {
-    setCollapsed((collapsed) => !collapsed);
-  };
-
-  const handleSetCurrentSortType = (type: Sort) => {
-    setCurrentSort(type);
-
-    dispatch({
-      type: "sort",
-      sortedProducts: products.sort(currentSort.method),
-    });
-  };
+  const [currentSort, setCurrentSortType] = useSorting({ products, dispatch });
+  const [collapsed, toggleCollapsed] = useToggle();
 
   return (
-    <button className="btn sort-products" onClick={handleCollapsedToggle}>
+    <button className="btn sort-products" onClick={toggleCollapsed}>
       <img src={sortIcon} alt="" />
       <p>Sort by:</p>
       <p className="font-weight-700">{currentSort.name}</p>
       <div>
         {collapsed && (
           <div className="dropdown">
-            {sortFunctions.map((type, i) => {
+            {sortFunctions.map((type) => {
               return (
                 <p
                   className="dropdown__element"
                   key={type.name}
-                  onClick={() => handleSetCurrentSortType(type)}
+                  onClick={() => setCurrentSortType(type)}
                 >
                   {type.name}
                 </p>
