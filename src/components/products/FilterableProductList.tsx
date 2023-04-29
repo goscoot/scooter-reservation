@@ -1,6 +1,6 @@
 import ProductList from "./ProductList";
 import { scooters } from "../../data/Scooters";
-import SortButton from "./SortButton";
+import SortButton from "../sorting/SortButton";
 import { useReducer } from "react";
 import Filters from "../filters/FilterList";
 import { productsReducer } from "../../reducers/productsReducer";
