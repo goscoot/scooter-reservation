@@ -9,7 +9,7 @@ const SortDropdown = ({ collapsed, setCurrentSortType }: SortDropdownProps) => {
   return (
     <div>
       {collapsed && (
-        <div className="dropdown">
+        <div className="sort__dropdown dropdown">
           {sortFunctions.map((type) => {
             return (
               <p
