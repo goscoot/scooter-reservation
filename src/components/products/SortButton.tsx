@@ -3,27 +3,12 @@ import chevronDownIcon from "../../assets/chevron-down.svg";
 import { Dispatch, useState } from "react";
 import { Scooter } from "../../data/Scooters";
 import { Actions } from "../../reducers/productsReducer";
-
-export interface Sort {
-  method: (a: Scooter, b: Scooter) => number;
-  name: string;
-}
+import { Sort, sortFunctions } from "../../helpers/sorting";
 
 interface SortButtonProps {
   dispatch: Dispatch<Actions>;
   products: Scooter[];
 }
-
-const sortFunctions = [
-  {
-    method: (a: Scooter, b: Scooter) => a.amount - b.amount,
-    name: "Best choice",
-  },
-  {
-    method: (a: Scooter, b: Scooter) => b.amount - a.amount,
-    name: "Popular",
-  },
-];
 
 const SortButton = ({ products, dispatch }: SortButtonProps) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -55,7 +40,7 @@ const SortButton = ({ products, dispatch }: SortButtonProps) => {
               return (
                 <p
                   className="dropdown__element"
-                  key={i}
+                  key={type.name}
                   onClick={() => handleSetCurrentSortType(type)}
                 >
                   {type.name}
