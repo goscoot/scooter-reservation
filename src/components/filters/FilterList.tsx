@@ -2,7 +2,7 @@ import { ChangeEvent, Dispatch, useEffect, useState } from "react";
 import { Actions } from "../../reducers/productsReducer";
 
 const BRANDS = ["Ducati", "FLOW", "Segway", "Pure", "Aprilia", "KQI2"];
-const COLORS = ["black", "white", "silver"];
+const COLORS = ["Black", "White", "Silver"];
 const RANGES = ["65", "40"];
 
 interface FilterListProps {
@@ -112,7 +112,7 @@ const Filters = ({ dispatch }: FilterListProps) => {
               onChange={(event) => handleAddRange(event)}
             />
             <span className="checkmark"></span>
-            {range}
+            {range}km
           </label>
         ))}
       </form>

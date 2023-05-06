@@ -8,14 +8,14 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <div key={product.id}>
+    <div className="product" key={product.id}>
       <img className="product__thumbnail" src={product.thumbnail} alt="" />
-
-      <div className="">
+      <div className="product__item">
+        {product.amount === 0 && <p className="text-body">NOT AVAILABLE</p>}
         <h5 className="font-weight-700 text-heading5 product__name">
           {product.name}
         </h5>
-        <p className="text-caption product__description">
+        <p className="text-body-sm product__description">
           {product.description}
         </p>
         <Link to="/reservation" className="text-caption link-underlined">

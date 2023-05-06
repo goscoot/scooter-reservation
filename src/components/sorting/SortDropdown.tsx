@@ -13,7 +13,7 @@ const SortDropdown = ({ collapsed, setCurrentSortType }: SortDropdownProps) => {
           {sortFunctions.map((type) => {
             return (
               <p
-                className="dropdown__element"
+                className="dropdown__element text-body-sm"
                 key={type.name}
                 onClick={() => setCurrentSortType(type)}
               >
