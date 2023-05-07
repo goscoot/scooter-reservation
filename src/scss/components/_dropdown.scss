@@ -1,0 +1,19 @@
+.dropdown {
+  padding: 1rem;
+  background-color: var(--clr-gray-100);
+  position: absolute;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 10px;
+
+  &__element {
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--clr-green-400);
+    }
+  }
+}
