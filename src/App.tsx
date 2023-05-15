@@ -6,6 +6,7 @@ import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
 import "./scss/styles.scss";
 import Products from "./pages/Products";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/login" element={<Signin />} />
             <Route path="/register" element={<Signup />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/booking" element={<Booking />} />
           </Routes>
         </AuthContextProvider>
       </Router>

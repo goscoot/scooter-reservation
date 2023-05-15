@@ -1,13 +1,13 @@
-import { useEffect } from "react";
 import { Slider } from "../components/Slider";
 import { useProducts } from "../hooks/useProducts";
+import { scooters } from "../data/Scooters";
 
 export function Featured() {
-  const { productList, getProductList, bestChoiceQuery } = useProducts();
-
-  useEffect(() => {
-    getProductList(bestChoiceQuery);
-  }, []);
+  // If storing products on firestore
+  // const { productList, getProductList, bestChoiceQuery } = useProducts();
+  // useEffect(() => {
+  //   getProductList(bestChoiceQuery);
+  // }, []);
 
   return (
     <div className="featured">
@@ -21,7 +21,7 @@ export function Featured() {
         </div>
       </div>
 
-      <Slider value={productList} />
+      <Slider value={scooters.filter((scooter) => scooter.id <= 5)} />
     </div>
   );
 }
