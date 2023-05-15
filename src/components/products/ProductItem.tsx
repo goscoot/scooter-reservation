@@ -1,12 +1,15 @@
 import { Scooter } from "../../data/Scooters";
 import { Link } from "react-router-dom";
 import smallArrowRight from "../../assets/arrow-right.svg";
+import useBasketStore from "../../store/useBasketStore";
 
 interface ProductItemProps {
   product: Scooter;
 }
 
 const ProductItem = ({ product }: ProductItemProps) => {
+  const { addProduct } = useBasketStore();
+
   return (
     <div className="product" key={product.id}>
       <img className="product__thumbnail" src={product.thumbnail} alt="" />
@@ -18,10 +21,17 @@ const ProductItem = ({ product }: ProductItemProps) => {
         <p className="text-body-sm product__description">
           {product.description}
         </p>
-        <Link to="/reservation" className="text-caption link-underlined">
+        <button
+          className="text-caption link-underlined"
+          onClick={() => addProduct(product.id)}
+        >
           Make a reservation
           <img src={smallArrowRight} alt="Arrow right" />
-        </Link>
+        </button>
+        {/* <Link to="/reservation" className="text-caption link-underlined">
+          Make a reservation
+          <img src={smallArrowRight} alt="Arrow right" />
+        </Link> */}
       </div>
     </div>
   );
