@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import basket from "@/assets/basket.svg";
 import logo from "@/assets/logo.svg";
 import userIcon from "@/assets/user-icon.svg";
@@ -48,10 +48,20 @@ export const Navbar = () => {
       </div>
       <ul className="menu text-body">
         <li className="text-weight-600">
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "font-weight-700" : "")}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <NavLink
+            to="/products"
+            className={({ isActive }) => (isActive ? "font-weight-700" : "")}
+          >
+            Products
+          </NavLink>
         </li>
         {!currentUser && (
           <li>
