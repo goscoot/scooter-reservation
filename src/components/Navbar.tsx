@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import basket from "@/assets/basket.svg";
 import logo from "@/assets/logo.svg";
 import userIcon from "@/assets/user-icon.svg";
@@ -9,7 +9,6 @@ import { useEffect, useState, useRef } from "react";
 export const Navbar = () => {
   const [onDisplay, setOnDisplay] = useState(false);
   const { currentUser, logout } = useAuth() as AuthContextType;
-  const navigate = useNavigate();
   const userIconRef = useRef<any>(null);
 
   async function handleLogout() {
@@ -19,10 +18,6 @@ export const Navbar = () => {
     } catch (err) {
       console.log(err);
     }
-  }
-
-  function redirectToReservations() {
-    navigate("/reservations");
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -42,11 +37,11 @@ export const Navbar = () => {
   }, [onDisplay]);
 
   return (
-    <nav>
+    <nav className="navbar">
       <div>
         <img src={logo} alt="logo" />
       </div>
-      <ul className="menu text-body">
+      <ul className="navbar__links text-body">
         <li className="text-weight-600">
           <NavLink
             to="/"
@@ -72,22 +67,22 @@ export const Navbar = () => {
         )}
         <li className="basket">
           <Link to="/booking">
-            <span className="basket-notification text-caption">1</span>
-            <img src={basket} alt="product basket" />
+            <span className="basket__indicator text-caption">1</span>
+            <img src={basket} alt="product basket" className="basket__image" />
           </Link>
         </li>
         {currentUser && (
           <li className="dropdown" onClick={() => setOnDisplay(!onDisplay)}>
-            <div className="user-icon">
+            <div className="profile">
               <img src={userIcon} alt="user icon" />
               <img src={arrowDown} alt="arrow down" />
             </div>
             {onDisplay && (
               <div
-                className="dropdown__content user-icon__modal"
+                className="dropdown__content profile__dropdown"
                 ref={userIconRef}
               >
-                <button onClick={redirectToReservations}>Reservations</button>
+                <Link to="/reservations">Reservations</Link>
                 <button onClick={handleLogout}>Sign Out</button>
               </div>
             )}
