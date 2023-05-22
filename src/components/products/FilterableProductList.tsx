@@ -1,9 +1,9 @@
 import ProductList from "./ProductList";
-import { scooters } from "../../data/Scooters";
+import { scooters } from "@/data/Scooters";
 import SortButton from "../sorting/SortButton";
 import { useReducer } from "react";
 import Filters from "../filters/FilterList";
-import { productsReducer } from "../../reducers/productsReducer";
+import { productsReducer } from "@/reducers/productsReducer";
 import FiltersButton from "../filters/FiltersButton";
 
 const FilterableProductList = () => {

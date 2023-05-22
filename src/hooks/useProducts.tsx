@@ -1,11 +1,10 @@
-import { db } from "../firebase";
+import { db } from "@/firebase";
 import { useState } from "react";
 import {
   query,
   where,
   getDocs,
   collection,
-  limit,
   orderBy,
   Query,
   CollectionReference,

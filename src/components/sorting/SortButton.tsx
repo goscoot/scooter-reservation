@@ -1,10 +1,10 @@
-import sortIcon from "../../assets/sort-icon.svg";
-import chevronDownIcon from "../../assets/chevron-down.svg";
-import chevronUpIcon from "../../assets/chevron-up.svg";
+import sortIcon from "@/assets/sort-icon.svg";
+import chevronDownIcon from "@/assets/chevron-down.svg";
+import chevronUpIcon from "@/assets/chevron-up.svg";
 import { Dispatch } from "react";
-import { Scooter } from "../../data/Scooters";
-import { Actions } from "../../reducers/productsReducer";
-import useToggle from "../../hooks/useToggle";
+import { Scooter } from "@/data/Scooters";
+import { Actions } from "@/reducers/productsReducer";
+import useToggle from "@/hooks/useToggle";
 import useSorting from "./useSorting";
 import SortDropdown from "./SortDropdown";
 

@@ -1,6 +1,6 @@
-import { Scooter } from "../../data/Scooters";
+import { Scooter } from "@/data/Scooters";
 import { Link } from "react-router-dom";
-import smallArrowRight from "../../assets/arrow-right.svg";
+import smallArrowRight from "@/assets/arrow-right.svg";
 
 interface ProductItemProps {
   product: Scooter;

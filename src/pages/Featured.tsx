@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Slider } from "../components/Slider";
-import { useProducts } from "../hooks/useProducts";
+import { Slider } from "@/components/Slider";
+import { useProducts } from "@/hooks/useProducts";
 
 export function Featured() {
   const { productList, getProductList, bestChoiceQuery } = useProducts();

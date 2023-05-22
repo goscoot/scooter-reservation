@@ -1,4 +1,4 @@
-import productsHeaderImage from "../assets/products-hero.webp";
+import productsHeaderImage from "@/assets/products-hero.webp";
 import FilterableProductList from "../components/products/FilterableProductList";
 
 const Products = () => {
