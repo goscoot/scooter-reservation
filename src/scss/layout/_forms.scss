@@ -35,3 +35,34 @@
 .input-checkbox:checked ~ .checkmark {
   background-color: var(--clr-green-400);
 }
+
+.input-date {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--clr-gray-100);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.input-time {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--clr-gray-100);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.input-select {
+  position: relative;
+  margin-block-end: 1.5rem;
+  width: 320px;
+  padding: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: var(--clr-gray-100);
+}
+
+.input-option {
+  color: black;
+  background-color: var(--clr-gray-100);
+}

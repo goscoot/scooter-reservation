@@ -5,7 +5,7 @@ import { Scooter } from "../../compiler/types";
 import useBasketStore from "../../store/useBasketStore";
 
 type TBookingItemProps = {
-  scooterId: string | number;
+  scooterId: number;
   scooterCount: number;
   changeTotalPrice: (newValue: number) => void;
 };
@@ -57,8 +57,8 @@ const BookingItem = ({
       {scooter ? (
         <div className="booking__list">
           <img src={scooter?.thumbnail} alt={scooter.description} />
-          <div className="booking__list__set">
-            <div className="booking__list__product">
+          <div className="booking__set">
+            <div className="booking__product">
               <p className="text-heading5">{scooter.name}</p>
               <div>
                 <div className="btn btn-primary" onClick={subCount}>
@@ -70,7 +70,7 @@ const BookingItem = ({
                 </div>
               </div>
             </div>
-            <div className="booking__list__pricing">
+            <div className="booking__pricing">
               <p className="text-body text-weight-600">{price}$</p>
               <p className="text-caption">{scooter.price}$</p>
               <div>

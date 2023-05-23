@@ -12,7 +12,7 @@ const ReservationAndReturnDate = () => {
             <Field
               type="date"
               name="reservationDate"
-              className="text-body-sm"
+              className="text-body-sm input-date"
             />
             <ErrorMessage
               className="error-message text-body-sm"
@@ -22,7 +22,11 @@ const ReservationAndReturnDate = () => {
           </div>
           <div>
             <p className="text-caption">Starting from</p>
-            <Field type="time" name="startingFrom" className="text-body-sm" />
+            <Field
+              type="time"
+              name="startingFrom"
+              className="text-body-sm input-time"
+            />
             <ErrorMessage
               className="error-message text-body-sm"
               name="startingFrom"
@@ -33,7 +37,11 @@ const ReservationAndReturnDate = () => {
         <div className="date-container">
           <div>
             <p className="text-caption">Return date</p>
-            <Field type="date" name="returnDate" className="text-body-sm" />
+            <Field
+              type="date"
+              name="returnDate"
+              className="text-body-sm input-date"
+            />
             <ErrorMessage
               className="error-message text-body-sm"
               name="returnDate"
@@ -42,7 +50,11 @@ const ReservationAndReturnDate = () => {
           </div>
           <div>
             <p className="text-caption">Finish time</p>
-            <Field type="time" name="finishTime" className="text-body-sm" />
+            <Field
+              type="time"
+              name="finishTime"
+              className="text-body-sm input-time"
+            />
             <ErrorMessage
               className="error-message text-body-sm"
               name="finishTime"

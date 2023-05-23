@@ -10,6 +10,8 @@ import * as Yup from "yup";
 import { pickCords } from "../components/map/PickLocationMap";
 import { paymentMethods } from "../components/booking/form/PaymentMethod";
 
+import useWindowSize from "../hooks/useWindowSize";
+
 const checkoutSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
@@ -42,6 +44,7 @@ const initialValues = {
 
 const Booking = () => {
   const { currentUser } = useAuth() as AuthContextType;
+  const windowSize = useWindowSize();
 
   const [items, setItems] = useState("");
   const [selectedPayment, setSelectedPayment] = useState(
@@ -75,7 +78,7 @@ const Booking = () => {
               <div className="booking__header">
                 <h1
                   className={
-                    window.innerWidth > 1000 ? "text-heading1" : "text-heading2"
+                    windowSize.width > 1000 ? "text-heading1" : "text-heading2"
                   }
                 >
                   Booking confirmation

@@ -4,6 +4,7 @@ import PickLocationMap from "../../map/PickLocationMap";
 import { useState } from "react";
 import { LatLngTuple } from "leaflet";
 import { pickCords } from "../../map/PickLocationMap";
+import chevronDown from "../../../assets/chevron-down.svg";
 
 type TSetFieldValue = (
   field: string,
@@ -44,7 +45,7 @@ const PickLocation = () => {
       <Field
         as="select"
         name="pickLocation"
-        className="text-body-sm"
+        className="text-body-sm input-select"
         onChange={(event: ChangeEvent<HTMLSelectElement>) =>
           handleMapSelect(event, formik.setFieldValue)
         }
@@ -52,7 +53,7 @@ const PickLocation = () => {
         {pickCords.map((point) => (
           <option
             key={point.id}
-            className="text-body-sm"
+            className="text-body-sm input-option"
             value={point.value}
             data-cords={point.coordinates}
           >
@@ -60,6 +61,7 @@ const PickLocation = () => {
           </option>
         ))}
       </Field>
+
       <ErrorMessage
         className="error-message text-body-sm"
         name="pickLocation"

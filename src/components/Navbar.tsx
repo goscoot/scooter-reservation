@@ -12,7 +12,7 @@ export const Navbar = () => {
   const { currentUser, logout } = useAuth() as AuthContextType;
   const navigate = useNavigate();
   const userIconRef = useRef<any>(null);
-  const [basketCount, setBasketCount] = useState(0);
+  const [basketCount, setBasketCount] = useState<number>(0);
 
   const { basketProducts } = useBasketStore();
 
