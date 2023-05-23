@@ -15,18 +15,17 @@ const FiltersButton = ({ dispatch }: FiltersButtonProps) => {
   };
 
   return (
-    <div className="filters-wrapper">
+    <div className="dropdown">
       <button
         className="btn filters-button"
-        onClick={() => handleSetCollapsed(true)}
+        onClick={() => handleSetCollapsed(!collapsed)}
       >
-        <img src={sortIcon} alt="" />
         All filters
         <img src={chevronDownIcon} alt="" />
       </button>
 
       {collapsed && (
-        <div className="dropdown">
+        <div className="dropdown__content filters-dropdown__content">
           <div className="filters-dropdown">
             <h2 className="text-heading2">Filters</h2>
             <img
