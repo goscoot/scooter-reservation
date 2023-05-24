@@ -1,16 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
-import basket from "../assets/basket.svg";
-import logo from "../assets/logo.svg";
-import userIcon from "../assets/user-icon.svg";
-import arrowDown from "../assets/arrow-down.svg";
-import { AuthContextType, useAuth } from "../context/AuthContext";
+import { Link, NavLink } from "react-router-dom";
+import basket from "@/assets/basket.svg";
+import logo from "@/assets/logo.svg";
+import userIcon from "@/assets/user-icon.svg";
+import arrowDown from "@/assets/arrow-down.svg";
+import { AuthContextType, useAuth } from "@/context/AuthContext";
 import { useEffect, useState, useRef } from "react";
 import useBasketStore from "../store/useBasketStore";
 
 export const Navbar = () => {
   const [onDisplay, setOnDisplay] = useState(false);
   const { currentUser, logout } = useAuth() as AuthContextType;
-  const navigate = useNavigate();
   const userIconRef = useRef<any>(null);
   const [basketCount, setBasketCount] = useState<number>(0);
 
@@ -27,10 +26,6 @@ export const Navbar = () => {
     } catch (err) {
       console.log(err);
     }
-  }
-
-  function redirectToReservations() {
-    navigate("/reservations");
   }
 
   function handleClickOutside(event: MouseEvent) {
@@ -50,16 +45,26 @@ export const Navbar = () => {
   }, [onDisplay]);
 
   return (
-    <nav>
+    <nav className="navbar">
       <div>
         <img src={logo} alt="logo" />
       </div>
-      <ul className="menu text-body">
+      <ul className="navbar__links text-body">
         <li className="text-weight-600">
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "font-weight-700" : "")}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <NavLink
+            to="/products"
+            className={({ isActive }) => (isActive ? "font-weight-700" : "")}
+          >
+            Products
+          </NavLink>
         </li>
         {!currentUser && (
           <li>
@@ -76,19 +81,25 @@ export const Navbar = () => {
               </span>
             )}
             <img src={basket} alt="product basket" />
+
           </Link>
         </li>
         {currentUser && (
-          <li className="user-icon" onClick={() => setOnDisplay(!onDisplay)}>
-            <img src={userIcon} alt="user icon" />
-            <img src={arrowDown} alt="arrown down" />
+          <li className="dropdown" onClick={() => setOnDisplay(!onDisplay)}>
+            <div className="profile">
+              <img src={userIcon} alt="user icon" />
+              <img src={arrowDown} alt="arrow down" />
+            </div>
+            {onDisplay && (
+              <div
+                className="dropdown__content profile__dropdown"
+                ref={userIconRef}
+              >
+                <Link to="/reservations">Reservations</Link>
+                <button onClick={handleLogout}>Sign Out</button>
+              </div>
+            )}
           </li>
-        )}
-        {onDisplay && (
-          <div className="user-icon__modal" ref={userIconRef}>
-            <button onClick={redirectToReservations}>Reservations</button>
-            <button onClick={handleLogout}>Sign Out</button>
-          </div>
         )}
       </ul>
     </nav>

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { AuthContextType, useAuth } from "../context/AuthContext";
+import { AuthContextType, useAuth } from "@/context/AuthContext";
 
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 // min 6 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.

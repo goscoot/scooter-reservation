@@ -1,15 +1,18 @@
-import { Sort, sortFunctions } from "../../helpers/sorting";
+import { Sort, sortFunctions } from "@/helpers/sorting";
 
 interface SortDropdownProps {
   collapsed: boolean;
   setCurrentSortType: (type: Sort) => void;
 }
 
-const SortDropdown = ({ collapsed, setCurrentSortType }: SortDropdownProps) => {
+const SortDropdownContent = ({
+  collapsed,
+  setCurrentSortType,
+}: SortDropdownProps) => {
   return (
-    <div>
+    <>
       {collapsed && (
-        <div className="sort__dropdown dropdown">
+        <div className="sort__dropdown dropdown__content">
           {sortFunctions.map((type) => {
             return (
               <p
@@ -23,8 +26,8 @@ const SortDropdown = ({ collapsed, setCurrentSortType }: SortDropdownProps) => {
           })}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
-export default SortDropdown;
+export default SortDropdownContent;

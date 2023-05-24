@@ -1,12 +1,12 @@
-import sortIcon from "../../assets/sort-icon.svg";
-import chevronDownIcon from "../../assets/chevron-down.svg";
-import chevronUpIcon from "../../assets/chevron-up.svg";
+import sortIcon from "@/assets/sort-icon.svg";
+import chevronDownIcon from "@/assets/chevron-down.svg";
+import chevronUpIcon from "@/assets/chevron-up.svg";
 import { Dispatch } from "react";
-import { Scooter } from "../../data/Scooters";
-import { Actions } from "../../reducers/productsReducer";
-import useToggle from "../../hooks/useToggle";
+import { Scooter } from "@/data/Scooters";
+import { Actions } from "@/reducers/productsReducer";
+import useToggle from "@/hooks/useToggle";
 import useSorting from "./useSorting";
-import SortDropdown from "./SortDropdown";
+import SortDropdownContent from "./SortDropdownContent";
 
 export interface SortButtonProps {
   dispatch: Dispatch<Actions>;
@@ -18,17 +18,18 @@ const SortButton = ({ products, dispatch }: SortButtonProps) => {
   const [collapsed, toggleCollapsed] = useToggle();
 
   return (
-    <button className="btn sort-button" onClick={toggleCollapsed}>
-      <img src={sortIcon} alt="" />
-      <p className="text-body-sm">Sort by:</p>
-      <p className="font-weight-700 text-body-sm">{currentSort.name}</p>
+    <div className="dropdown">
+      <button className="btn sort-button" onClick={toggleCollapsed}>
+        <p className="text-body-sm">Sort by:</p>
+        <p className="font-weight-700 text-body-sm">{currentSort.name}</p>
 
-      <SortDropdown
+        <img src={collapsed ? chevronUpIcon : chevronDownIcon} alt="" />
+      </button>
+      <SortDropdownContent
         setCurrentSortType={setCurrentSortType}
         collapsed={collapsed}
       />
-      <img src={collapsed ? chevronUpIcon : chevronDownIcon} alt="" />
-    </button>
+    </div>
   );
 };
 

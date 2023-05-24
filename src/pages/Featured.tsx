@@ -1,6 +1,8 @@
-import { Slider } from "../components/Slider";
-import { useProducts } from "../hooks/useProducts";
-import { scooters } from "../data/Scooters";
+
+import { scooters } from "@/data/Scooters";
+import { useEffect } from "react";
+import { Slider } from "@/components/Slider";
+import { useProducts } from "@/hooks/useProducts";
 
 export function Featured() {
   // If storing products on firestore

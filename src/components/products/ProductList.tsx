@@ -1,6 +1,6 @@
-import { Scooter } from "../../data/Scooters";
+import { Scooter } from "@/data/Scooters";
 import ProductItem from "./ProductItem";
-import sadFace from "../../assets/sad-face.svg";
+import sadFace from "@/assets/sad-face.svg";
 
 interface ProductListProps {
   products: Scooter[];

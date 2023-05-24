@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import smallArrowRight from "../assets/arrow-right.svg";
-import arrowRight from "../assets/image-arrow-right.svg";
-import arrowLeft from "../assets/image-arrow-left.svg";
-import { useSlider } from "../hooks/useSlider";
-import { Scooter } from "../compiler/types";
+import smallArrowRight from "@/assets/arrow-right.svg";
+import arrowRight from "@/assets/image-arrow-right.svg";
+import arrowLeft from "@/assets/image-arrow-left.svg";
+import { useSlider } from "@/hooks/useSlider";
+import { Scooter } from "@/compiler/types";
 
 type SliderProps = {
   value: Scooter[];
