@@ -32,11 +32,11 @@ export const pickCords: TCord[] = [
   },
 ];
 
-type TPickLocationMapProps = {
+type PickLocationMapProps = {
   selectedMarker: LatLngTuple;
 };
 
-const PickLocationMap = ({ selectedMarker }: TPickLocationMapProps) => {
+const PickLocationMap = ({ selectedMarker }: PickLocationMapProps) => {
   const [position, setPosition] = useState<LatLngTuple>(selectedMarker);
 
   useEffect(() => {

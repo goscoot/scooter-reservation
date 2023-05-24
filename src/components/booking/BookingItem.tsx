@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Scooter } from "../../compiler/types";
 import useBasketStore from "../../store/useBasketStore";
 
-type TBookingItemProps = {
+type BookingItemProps = {
   scooterId: number;
   scooterCount: number;
   changeTotalPrice: (newValue: number) => void;
@@ -14,12 +14,12 @@ const BookingItem = ({
   scooterId,
   scooterCount,
   changeTotalPrice,
-}: TBookingItemProps) => {
+}: BookingItemProps) => {
   const [count, setCount] = useState<number>(scooterCount);
   const [price, setPrice] = useState<number>(0);
 
   const scooter: Scooter | undefined = scooters.find(
-    (scooter) => Number(scooter.id) === Number(scooterId)
+    (scooter) => scooter.id === scooterId
   );
 
   const { handleProducts, removeProducts } = useBasketStore();
@@ -40,14 +40,14 @@ const BookingItem = ({
 
   const subCount = () => {
     if (scooter && count > 0) {
-      handleProducts(Number(scooterId), count - 1);
+      handleProducts(scooterId, count - 1);
       setCount((count) => count - 1);
     }
   };
 
   const addCount = () => {
     if (scooter && count <= scooter.amount) {
-      handleProducts(Number(scooterId), count + 1);
+      handleProducts(scooterId, count + 1);
       setCount((count) => count + 1);
     }
   };

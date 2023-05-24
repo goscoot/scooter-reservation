@@ -31,7 +31,7 @@ const BookingList = () => {
           <div className="square"></div>
         </Link>
 
-        <br />
+        <hr />
         <div className="product-list__total">
           <p className="text-body-sm">Total Sum</p>
           <h4 className="text-heading4 text-weight-600">{totalPrice}$</h4>
