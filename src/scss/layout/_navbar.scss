@@ -1,4 +1,4 @@
-nav {
+.navbar {
   width: 95%;
   position: absolute;
   top: 20px;
@@ -7,57 +7,54 @@ nav {
   justify-content: space-between;
   z-index: 1;
 
-  .menu {
+  &__links {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 40px;
 
     button {
       white-space: nowrap;
     }
+  }
+}
 
-    .user-icon {
-      display: flex;
-      gap: 5px;
-      cursor: pointer;
-      position: relative;
+.profile {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
 
-      img:first-child {
-        width: 42px;
-      }
+  &__image:first-child {
+    width: 42px;
+  }
 
-      &__modal {
-        right: 0;
-      }
-    }
+  &__dropdown {
+    right: 0;
+  }
+}
 
-    .basket {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      position: relative;
+.basket {
+  position: relative;
+  cursor: pointer;
 
-      a {
-        height: 44px;
-      }
-    }
+  &__image {
+    display: block;
+  }
 
-    .basket-notification {
-      display: flex;
-      justify-content: center;
-      font-size: 10px;
-      color: white;
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      left: 30px;
-      top: 6px;
+  &__indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 24px;
+    top: 6px;
 
-      background: #f35858;
-      border-radius: 53px;
-    }
+    background: #f35858;
+    border-radius: 53px;
   }
 }
 
