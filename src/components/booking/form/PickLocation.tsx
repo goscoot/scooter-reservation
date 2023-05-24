@@ -42,6 +42,7 @@ const PickLocation = () => {
     <div className="form-group__container">
       <h2 className="text-heading2">Pick location</h2>
       <span className="heading-subtext text-display1">3</span>
+      <img src={chevronDown} className="input-option__chevron" alt="" />
       <Field
         as="select"
         name="pickLocation"
