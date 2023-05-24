@@ -1,5 +1,13 @@
 .product__item {
   margin-top: 1.25rem;
+
+  img {
+    margin-inline: 6px;
+  }
+
+  button {
+    cursor: pointer;
+  }
 }
 
 .products__none {

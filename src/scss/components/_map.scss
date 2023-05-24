@@ -1,0 +1,13 @@
+.map {
+  width: 347px;
+  height: 347px;
+  border-radius: 8px;
+}
+
+.leaflet-interactive {
+  filter: hue-rotate(260deg);
+}
+
+.leaflet-tile-pane {
+  filter: grayscale(1);
+}

@@ -5,11 +5,19 @@ import userIcon from "@/assets/user-icon.svg";
 import arrowDown from "@/assets/arrow-down.svg";
 import { AuthContextType, useAuth } from "@/context/AuthContext";
 import { useEffect, useState, useRef } from "react";
+import useBasketStore from "../store/useBasketStore";
 
 export const Navbar = () => {
   const [onDisplay, setOnDisplay] = useState(false);
   const { currentUser, logout } = useAuth() as AuthContextType;
   const userIconRef = useRef<any>(null);
+  const [basketCount, setBasketCount] = useState<number>(0);
+
+  const { basketProducts } = useBasketStore();
+
+  useEffect(() => {
+    setBasketCount(basketProducts.reduce((sum, num) => (sum += num.count), 0));
+  }, [basketProducts]);
 
   async function handleLogout() {
     try {
@@ -67,8 +75,13 @@ export const Navbar = () => {
         )}
         <li className="basket">
           <Link to="/booking">
-            <span className="basket__indicator text-caption">1</span>
-            <img src={basket} alt="product basket" className="basket__image" />
+            {basketCount > 0 && (
+              <span className="basket-notification text-caption">
+                {basketCount}
+              </span>
+            )}
+            <img src={basket} alt="product basket" />
+
           </Link>
         </li>
         {currentUser && (
