@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, useEffect, useState } from "react";
-import { Actions } from "../../reducers/productsReducer";
+import { Actions } from "@/reducers/productsReducer";
 
 const BRANDS = ["Ducati", "FLOW", "Segway", "Pure", "Aprilia", "KQI2"];
 const COLORS = ["Black", "White", "Silver"];

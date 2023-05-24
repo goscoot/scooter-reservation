@@ -1,4 +1,4 @@
-import { Sort, sortFunctions } from "../../helpers/sorting";
+import { Sort, sortFunctions } from "@/helpers/sorting";
 
 interface SortDropdownProps {
   collapsed: boolean;

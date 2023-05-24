@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import basket from "../assets/basket.svg";
-import logo from "../assets/logo.svg";
-import userIcon from "../assets/user-icon.svg";
-import arrowDown from "../assets/arrow-down.svg";
-import { AuthContextType, useAuth } from "../context/AuthContext";
+import basket from "@/assets/basket.svg";
+import logo from "@/assets/logo.svg";
+import userIcon from "@/assets/user-icon.svg";
+import arrowDown from "@/assets/arrow-down.svg";
+import { AuthContextType, useAuth } from "@/context/AuthContext";
 import { useEffect, useState, useRef } from "react";
 
 export const Navbar = () => {

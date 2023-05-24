@@ -1,4 +1,4 @@
-import { Sort, sortFunctions } from "../../helpers/sorting";
+import { Sort, sortFunctions } from "@/helpers/sorting";
 import { useState } from "react";
 import { SortButtonProps } from "./SortButton";
 

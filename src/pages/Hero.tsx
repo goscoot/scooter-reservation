@@ -1,6 +1,6 @@
-import arrowRight from "../assets/arrow-right.svg";
-import heroImage1 from "../assets/scooter1.png";
-import heroImage2 from "../assets/scooter2.png";
+import arrowRight from "@/assets/arrow-right.svg";
+import heroImage1 from "@/assets/scooter1.png";
+import heroImage2 from "@/assets/scooter2.png";
 
 export function Hero() {
   return (

@@ -1,4 +1,4 @@
-import { Scooter } from "../data/Scooters";
+import { Scooter } from "@/data/Scooters";
 
 export interface Sort {
   method: (a: Scooter, b: Scooter) => number;
