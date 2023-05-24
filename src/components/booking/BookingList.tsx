@@ -3,6 +3,7 @@ import BookingItem from "./BookingItem";
 import useBasketStore from "../../store/useBasketStore";
 import { useFormikContext } from "formik";
 import arrowRight from "../../assets/arrow-right.svg";
+import { Link } from "react-router-dom";
 
 const BookingList = () => {
   const [totalPrice, setTotalPrice] = useState<number>(0);
@@ -26,7 +27,10 @@ const BookingList = () => {
           />
         ))}
 
-        <div className="square"></div>
+        <Link to="/products">
+          <div className="square"></div>
+        </Link>
+
         <br />
         <div className="product-list__total">
           <p className="text-body-sm">Total Sum</p>

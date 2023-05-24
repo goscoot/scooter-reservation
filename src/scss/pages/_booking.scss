@@ -108,6 +108,11 @@ $img-size: 128px;
 
   .product-list__wrapper {
     padding: $product-list-sizing;
+
+    > a {
+      display: block;
+      width: 128px;
+    }
   }
 
   .product-list__total p {
@@ -205,6 +210,10 @@ $img-size: 128px;
   .booking {
     .product-list__wrapper {
       padding: 7px;
+
+      > a {
+        width: auto;
+      }
     }
 
     .product-list__proceed {
