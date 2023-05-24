@@ -1,8 +1,8 @@
 import { useState } from "react";
 import BookingItem from "./BookingItem";
-import useBasketStore from "../../store/useBasketStore";
+import useBasketStore from "@/store/useBasketStore";
 import { useFormikContext } from "formik";
-import arrowRight from "../../assets/arrow-right.svg";
+import arrowRight from "@/assets/arrow-right.svg";
 import { Link } from "react-router-dom";
 
 const BookingList = () => {

@@ -1,12 +1,12 @@
 import { Field, ErrorMessage } from "formik";
 
-import PickLocation from "./form/PickLocation";
+import PickLocation from "@/components/booking/form/PickLocation";
 
-import useBasketStore from "../../store/useBasketStore";
+import useBasketStore from "@/store/useBasketStore";
 import { useEffect } from "react";
-import PersonalInformation from "./form/PersonalInformation";
-import ReservationAndReturnDate from "./form/ReservationAndReturnDate";
-import PaymentMethod from "./form/PaymentMethod";
+import PersonalInformation from "@/components/booking/form/PersonalInformation";
+import ReservationAndReturnDate from "@/components/booking/form/ReservationAndReturnDate";
+import PaymentMethod from "@/components/booking/form/PaymentMethod";
 import { Dispatch, SetStateAction } from "react";
 
 interface BookingFormProps {

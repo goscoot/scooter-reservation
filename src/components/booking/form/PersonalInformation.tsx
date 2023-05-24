@@ -1,5 +1,5 @@
 import { Field, ErrorMessage } from "formik";
-import { useAuth, AuthContextType } from "../../../context/AuthContext";
+import { useAuth, AuthContextType } from "@/context/AuthContext";
 
 const PersonalInformation = () => {
   const { currentUser } = useAuth() as AuthContextType;

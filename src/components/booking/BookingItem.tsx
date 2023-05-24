@@ -1,8 +1,8 @@
-import { scooters } from "../../data/Scooters";
-import arrowRight from "../../assets/arrow-right.svg";
+import { scooters } from "@/data/Scooters";
+import arrowRight from "@/assets/arrow-right.svg";
 import { useEffect, useState } from "react";
-import { Scooter } from "../../compiler/types";
-import useBasketStore from "../../store/useBasketStore";
+import { Scooter } from "@/compiler/types";
+import useBasketStore from "@/store/useBasketStore";
 
 type BookingItemProps = {
   scooterId: number;

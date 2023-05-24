@@ -1,10 +1,10 @@
 import { Field, ErrorMessage, useFormikContext } from "formik";
 import { ChangeEvent } from "react";
-import PickLocationMap from "../../map/PickLocationMap";
+import PickLocationMap from "@/components/map/PickLocationMap";
 import { useState } from "react";
 import { LatLngTuple } from "leaflet";
-import { pickCords } from "../../map/PickLocationMap";
-import chevronDown from "../../../assets/chevron-down.svg";
+import { pickCords } from "@/components/map/PickLocationMap";
+import chevronDown from "@/assets/chevron-down.svg";
 
 type TSetFieldValue = (
   field: string,

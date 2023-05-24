@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from "formik";
-import paypalCard from "../../../assets/paypal-card.svg";
-import paymentCard from "../../../assets/payment-card.svg";
+import paypalCard from "@/assets/paypal-card.svg";
+import paymentCard from "@/assets/payment-card.svg";
 import { SetStateAction, Dispatch } from "react";
 
 type TPaymentMethod = {

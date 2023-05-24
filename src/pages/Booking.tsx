@@ -1,16 +1,16 @@
-import { useAuth, AuthContextType } from "../context/AuthContext";
+import { useAuth, AuthContextType } from "@/context/AuthContext";
 import { useEffect, useState } from "react";
 
-import BookingList from "../components/booking/BookingList";
-import BookingForm from "../components/booking/BookingForm";
+import BookingList from "@/components/booking/BookingList";
+import BookingForm from "@/components/booking/BookingForm";
 
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
-import { pickCords } from "../components/map/PickLocationMap";
-import { paymentMethods } from "../components/booking/form/PaymentMethod";
+import { pickCords } from "@/components/map/PickLocationMap";
+import { paymentMethods } from "@/components/booking/form/PaymentMethod";
 
-import useWindowSize from "../hooks/useWindowSize";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const checkoutSchema = Yup.object().shape({
   email: Yup.string()
