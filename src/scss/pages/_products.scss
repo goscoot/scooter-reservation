@@ -64,6 +64,7 @@
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   gap: 1.25rem;
   row-gap: 4.25rem;
+  margin-top: 1.25rem;
 }
 
 .product__thumbnail {
@@ -85,7 +86,7 @@
   align-items: center;
   gap: 0.25rem;
   padding-block: 0.5rem;
-  margin-block: 1.25rem;
+  margin-top: 1.25rem;
   position: relative;
   background-color: var(--clr-gray-100);
 }

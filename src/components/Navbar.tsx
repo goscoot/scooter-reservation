@@ -77,16 +77,21 @@ export const Navbar = () => {
           </Link>
         </li>
         {currentUser && (
-          <li className="user-icon" onClick={() => setOnDisplay(!onDisplay)}>
-            <img src={userIcon} alt="user icon" />
-            <img src={arrowDown} alt="arrown down" />
+          <li className="dropdown" onClick={() => setOnDisplay(!onDisplay)}>
+            <div className="user-icon">
+              <img src={userIcon} alt="user icon" />
+              <img src={arrowDown} alt="arrow down" />
+            </div>
+            {onDisplay && (
+              <div
+                className="dropdown__content user-icon__modal"
+                ref={userIconRef}
+              >
+                <button onClick={redirectToReservations}>Reservations</button>
+                <button onClick={handleLogout}>Sign Out</button>
+              </div>
+            )}
           </li>
-        )}
-        {onDisplay && (
-          <div className="user-icon__modal" ref={userIconRef}>
-            <button onClick={redirectToReservations}>Reservations</button>
-            <button onClick={handleLogout}>Sign Out</button>
-          </div>
         )}
       </ul>
     </nav>
