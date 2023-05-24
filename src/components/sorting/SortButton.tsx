@@ -20,7 +20,6 @@ const SortButton = ({ products, dispatch }: SortButtonProps) => {
   return (
     <div className="dropdown">
       <button className="btn sort-button" onClick={toggleCollapsed}>
-        <img src={sortIcon} alt="" />
         <p className="text-body-sm">Sort by:</p>
         <p className="font-weight-700 text-body-sm">{currentSort.name}</p>
 
