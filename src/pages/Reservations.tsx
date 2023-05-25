@@ -4,7 +4,7 @@ const Reservations = () => {
   return (
     <main className="reservations-container">
       <h1 className="text-heading1">Reservation History</h1>
-      <div className="old-reservations">
+      <div className="reservation-entries-wrapper">
         <h2 className="text-heading2">Active reservations</h2>
 
         <div className="reservation-entries">
@@ -62,7 +62,7 @@ const Reservations = () => {
           </div>
         </div>
       </div>
-      <div className="old-reservations">
+      <div className="reservation-entries-wrapper">
         <h2 className="text-heading2">Old reservations</h2>
 
         <div className="reservation-entries">
