@@ -71,7 +71,7 @@ const BookingItem = ({
               </div>
             </div>
             <div className="booking__pricing">
-              <p className="text-body text-weight-600">{price}$</p>
+              <p className="text-body font-weight-600">{price}$</p>
               <p className="text-caption">{scooter.price}$</p>
               <div>
                 <button onClick={() => removeProducts(scooter.id)}>
