@@ -88,7 +88,9 @@ const Reservations = () => {
             </div>
             <div className="reservation-details__item">
               <div className="text-body-sm">Status</div>
-              <div className="reservation-product__status">Completed</div>
+              <div className="reservation-product__status text-body-sm font-weight-700">
+                Completed
+              </div>
             </div>
           </div>
         </div>
