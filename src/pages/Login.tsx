@@ -47,13 +47,13 @@ export function Login() {
               <div className="signin__wrapper2__mail">
                 <div className="text-caption">E-mail</div>
                 <Field
-                  className="input-text"
+                  className="input-text text-caption"
                   type="text"
                   name="email"
                   placeholder="johndoe@gmail.com"
                 />
                 <ErrorMessage
-                  className="error-message"
+                  className="error-message text-caption"
                   name="email"
                   component="div"
                 />
@@ -61,23 +61,26 @@ export function Login() {
               <div className="signin__wrapper2__pass">
                 <div className="text-caption">Password</div>
                 <Field
-                  className="input-text"
+                  className="input-text text-caption"
                   type="password"
                   name="password"
                   placeholder="password"
                 />
                 <ErrorMessage
-                  className="error-message"
+                  className="error-message text-caption"
                   name="password"
                   component="div"
                 />
               </div>
             </div>
             <div className="signin__wrapper3">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-primary text-caption" type="submit">
                 Login
               </button>
-              <Link to="/register" className="signin__wrapper3__link">
+              <Link
+                to="/register"
+                className="signin__wrapper3__link text-caption font-weight-600"
+              >
                 <span className="link-underlined">
                   Don’t have account yet?{" "}
                 </span>

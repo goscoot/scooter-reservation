@@ -34,7 +34,7 @@ const BookingList = () => {
         <hr />
         <div className="product-list__total">
           <p className="text-body-sm">Total Sum</p>
-          <h4 className="text-heading4 text-weight-600">{totalPrice}$</h4>
+          <h4 className="text-heading4 font-weight-600">{totalPrice}$</h4>
         </div>
         <button
           className="btn btn-primary text-body-sm product-list__proceed"

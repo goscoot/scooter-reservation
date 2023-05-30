@@ -48,13 +48,13 @@ export function Register() {
               <div className="signup__wrapper2__name">
                 <div className="text-caption">Name and Lastname</div>
                 <Field
-                  className="input-text"
+                  className="input-text text-caption"
                   type="text"
                   name="name"
                   placeholder="John Doe"
                 />
                 <ErrorMessage
-                  className="error-message"
+                  className="error-message text-caption"
                   name="name"
                   component="div"
                 />
@@ -62,13 +62,13 @@ export function Register() {
               <div className="signup__wrapper2__mail">
                 <div className="text-caption">E-mail</div>
                 <Field
-                  className="input-text"
+                  className="input-text text-caption"
                   type="email"
                   name="email"
                   placeholder="johndoe@gmail.com"
                 />
                 <ErrorMessage
-                  className="error-message"
+                  className="error-message text-caption"
                   name="email"
                   component="div"
                 />
@@ -76,23 +76,26 @@ export function Register() {
               <div className="signup__wrapper2__pass">
                 <div className="text-caption">Password</div>
                 <Field
-                  className="input-text"
+                  className="input-text text-caption"
                   type="password"
                   name="password"
                   placeholder="password"
                 />
                 <ErrorMessage
-                  className="error-message"
+                  className="error-message text-caption"
                   name="password"
                   component="div"
                 />
               </div>
             </div>
             <div className="signup__wrapper3">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-primary text-caption" type="submit">
                 Register
               </button>
-              <Link to="/login" className="signup__wrapper3__link">
+              <Link
+                to="/login"
+                className="signup__wrapper3__link text-caption font-weight-600"
+              >
                 <span className="link-underlined">
                   I already have an account
                 </span>

@@ -50,7 +50,7 @@ export const Navbar = () => {
         <img src={logo} alt="logo" />
       </div>
       <ul className="navbar__links text-body">
-        <li className="text-weight-600">
+        <li className="font-weight-600">
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? "font-weight-700" : "")}
@@ -81,7 +81,6 @@ export const Navbar = () => {
               </span>
             )}
             <img src={basket} alt="product basket" />
-
           </Link>
         </li>
         {currentUser && (

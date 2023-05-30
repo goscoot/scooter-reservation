@@ -51,7 +51,7 @@ const PaymentMethod = ({ setSelectedPayment }: PaymentMethodProps) => {
             </div>
             <label
               htmlFor={method.value}
-              className="text-caption text-weight-600"
+              className="text-caption font-weight-600"
             >
               {method.name}
             </label>
