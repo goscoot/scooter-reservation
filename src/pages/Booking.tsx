@@ -47,9 +47,6 @@ const Booking = () => {
   const windowSize = useWindowSize();
 
   const [items, setItems] = useState("");
-  const [selectedPayment, setSelectedPayment] = useState(
-    paymentMethods[0].value
-  );
 
   useEffect(() => {
     if (currentUser) {
@@ -67,7 +64,6 @@ const Booking = () => {
         validationSchema={checkoutSchema}
         onSubmit={(values, { setSubmitting }) => {
           values.items = items;
-          values.paymentMethod = selectedPayment;
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
         }}
@@ -84,10 +80,7 @@ const Booking = () => {
                   Booking confirmation
                 </h1>
               </div>
-              <BookingForm
-                setItems={setItems}
-                setSelectedPayment={setSelectedPayment}
-              />
+              <BookingForm setItems={setItems} />
             </div>
             <BookingList />
           </div>

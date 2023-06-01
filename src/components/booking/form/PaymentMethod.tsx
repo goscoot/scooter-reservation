@@ -15,18 +15,7 @@ export const paymentMethods: TPaymentMethod[] = [
   { name: "Paypal", value: "paypal", icon: paypalCard, id: 2 },
 ];
 
-interface PaymentMethodProps {
-  // payment: SetStateAction<string>;
-  setSelectedPayment: Dispatch<SetStateAction<string>>;
-}
-
-const PaymentMethod = ({ setSelectedPayment }: PaymentMethodProps) => {
-  const handlePaymentChange = (event: MouseEvent) => {
-    const target = event.target as HTMLInputElement;
-    if (target != null) {
-      setSelectedPayment(target.value);
-    }
-  };
+const PaymentMethod = () => {
   return (
     <div
       className="form-group__container"
@@ -44,7 +33,6 @@ const PaymentMethod = ({ setSelectedPayment }: PaymentMethodProps) => {
                 name="paymentMethod"
                 id={method.value}
                 value={method.value}
-                onClick={handlePaymentChange}
                 className="form-group__input"
               />
               <img src={method.icon} alt="" />

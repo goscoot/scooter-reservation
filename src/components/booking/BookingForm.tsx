@@ -11,10 +11,9 @@ import { Dispatch, SetStateAction } from "react";
 
 interface BookingFormProps {
   setItems: Dispatch<SetStateAction<string>>;
-  setSelectedPayment: Dispatch<SetStateAction<string>>;
 }
 
-const BookingForm = ({ setItems, setSelectedPayment }: BookingFormProps) => {
+const BookingForm = ({ setItems }: BookingFormProps) => {
   const { basketProducts } = useBasketStore();
 
   useEffect(() => {
@@ -26,7 +25,7 @@ const BookingForm = ({ setItems, setSelectedPayment }: BookingFormProps) => {
       <PersonalInformation />
       <ReservationAndReturnDate />
       <PickLocation />
-      <PaymentMethod setSelectedPayment={setSelectedPayment} />
+      <PaymentMethod />
 
       <Field type="text" style={{ display: "none" }} name="items" />
       <ErrorMessage
